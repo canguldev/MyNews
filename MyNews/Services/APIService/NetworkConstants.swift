@@ -55,7 +55,7 @@ extension EndPoint: EndPointProtocol {
     }
     
     var apiKey: String {
-        return APIKey.key
+        return ""
     }
     
     var method: HTTPMethod {
