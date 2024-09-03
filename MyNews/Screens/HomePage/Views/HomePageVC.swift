@@ -52,6 +52,10 @@ class HomePageVC: UIViewController {
         let activityIndicatorItem = UIBarButtonItem(customView: activityIndicator)
         navigationItem.rightBarButtonItem = activityIndicatorItem
         navigationItem.hidesBackButton = true
+        configureWithExt()
+    }
+    
+    private func configureWithExt() {
         view.addSubviewsFromExt(activityIndicator, segmentedControl, newsTableView)
         let standartPadding: CGFloat = 10
         segmentedControl.anchorFromExt(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: standartPadding, left: view.leftAnchor, paddingLeft: standartPadding, right: view.rightAnchor, paddingRight: standartPadding)
