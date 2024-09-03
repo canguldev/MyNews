@@ -8,15 +8,14 @@
 import Foundation
 
 protocol NewsNetworkProtocol {
-    func fetchNews(completion: @escaping (Result<News, NetworError>) -> Void)
+    func fetchNews(endpoint: EndPoint, completion: @escaping (Result<News, NetworError>) -> Void)
 }
 
 final class NewsNetwork: NewsNetworkProtocol {
     static let shared = NewsNetwork()
     private init() {}
     
-    func fetchNews(completion: @escaping (Result<News, NetworError>) -> Void) {
-        let endpoint = EndPoint.sport
+    func fetchNews(endpoint: EndPoint, completion: @escaping (Result<News, NetworError>) -> Void) {
         NetworkCaller.shared.fetchData(endpoint, completion: completion)
     }
 }
