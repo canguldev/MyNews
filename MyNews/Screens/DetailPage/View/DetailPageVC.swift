@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailPageVC: UIViewController {
+    
+    //MARK: - Variables
+    var viewModel: DetailPageViewModel
     
     //MARK: - UI Elements
     private lazy var newsTitleLabel: UILabel = {
@@ -55,9 +59,19 @@ class DetailPageVC: UIViewController {
     }()
     
     //MARK: - Lifecycle
+    init(viewModel: DetailPageViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
+        setUIElementsValue()
     }
     
     //MARK: - Helper Functions
@@ -65,6 +79,13 @@ class DetailPageVC: UIViewController {
         view.backgroundColor = .systemBackground
         title = "News Detail"
         configureWithExt()
+    }
+    
+    private func setUIElementsValue() {
+        newsTitleLabel.text = viewModel.title
+        newsImageView.kf.setImage(with: viewModel.newsImage)
+        newsAuthorLabel.text = viewModel.author
+        newsDescriptionTextView.text = viewModel.description
     }
     
     private func configureWithExt() {
@@ -80,7 +101,9 @@ class DetailPageVC: UIViewController {
     }
     
     @objc func goToWebsite() {
-        
+        guard let url = viewModel.newsURL else { return }
+        let safariController = SFSafariViewController(url: url)
+        present(safariController, animated: true)
     }
 
 }

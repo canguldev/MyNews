@@ -101,7 +101,12 @@ class HomePageVC: UIViewController {
 
 //MARK: - UITableViewDelegate
 extension HomePageVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedArticle = viewModel.getSelectedArticle(index: indexPath.row) else { return }
+        let detailViewModel = DetailPageViewModel(article: selectedArticle)
+        let destinationVC = DetailPageVC(viewModel: detailViewModel)
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }
 
 //MARK: - UITableViewDataSource
