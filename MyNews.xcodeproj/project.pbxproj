@@ -32,6 +32,7 @@
 		36092B462C872E64004C99D7 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		36092B482C873099004C99D7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		36092B4A2C8733BA004C99D7 /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
+		361567E82C905944000B4219 /* MyNewsVideo.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyNewsVideo.MP4; sourceTree = "<group>"; };
 		365195582C877DCD002D0857 /* DetailPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageVC.swift; sourceTree = "<group>"; };
 		36558DED2C84C393004A83BC /* NewsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetwork.swift; sourceTree = "<group>"; };
 		36558DF42C84C60E004A83BC /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				36C076762C83273400D72500 /* Assets.xcassets */,
+				361567E82C905944000B4219 /* MyNewsVideo.MP4 */,
 				36C0767B2C83273400D72500 /* Info.plist */,
 			);
 			path = Supports;
